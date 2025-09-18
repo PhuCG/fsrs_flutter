@@ -1,8 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Support for 16 KB page sizes -->
+    <supports-screens android:anyDensity="true" />
+    
     <application
         android:label="frsr_flutter_example"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:extractNativeLibs="true">
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -30,6 +34,11 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        
+        <!-- Support for 16 KB page sizes -->
+        <meta-data
+            android:name="android.app.lib_name"
+            android:value="frsr_flutter" />
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and
